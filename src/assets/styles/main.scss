@@ -1,6 +1,9 @@
-.main {
-    background-color: blue;
-    h1 {
-        font-size: 50px;
-    }
-}
+@import './base.scss';
+
+@import './components/header.scss';
+@import './components/footer.scss';
+
+@import './pages/home.scss';
+
+
+

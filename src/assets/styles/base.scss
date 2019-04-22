@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before
+ {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito/Nunito-Regular.ttf');
+}
+html {
+  font-size: 10px;
+  font-family: 'Nunito';
+}
+body {
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.7;
+  background-color: #0f61092b;
+}
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1rem;
+}

@@ -20,12 +20,7 @@ module.exports = {
           loader:'babel-loader'
       },
       {
-        test: /\.css$/,
-        exclude: /(node_modules)/,
-        use: ['style-loader','css-loader']
-      },
-      {
-        test: /\.scss$/,
+        test: /\.(scss|sass|css)$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
@@ -33,6 +28,27 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(ttf|otf|woff|svg|eot)$/,
+        exclude: /node_modules/,
+        use: [ 
+              {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
+                }
+              }]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options:{},
+          }
+       ]
       }
     ]
   },
