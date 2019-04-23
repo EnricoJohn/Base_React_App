@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Formik } from 'formik';
+import { Formik, Field } from 'formik';
 
 const Contact = () => (
-    <div>
+    <div className='Formulario'>
       <h1>Formulario</h1>
+      <div className='Formulario_Form'>
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ email: ''}}
         validate={values => {
           let errors = {};
           if (!values.email) {
@@ -23,7 +24,7 @@ const Contact = () => (
             setSubmitting(false);
           }, 400);
         }}
-      >
+      > 
         {({
           values,
           errors,
@@ -34,29 +35,51 @@ const Contact = () => (
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form className='Formulario_Form_form' onSubmit={handleSubmit}>
+           
+            <input
+              type="char"
+              name="name"
+              placeholder="Name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.name}
+            />
+            <input
+              type="char"
+              name="surname"
+              placeholder="Surname"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.surname}
+            />
             <input
               type="email"
               name="email"
+              placeholder="Email"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
             />
             {errors.email && touched.email && errors.email}
-            <input
-              type="password"
-              name="password"
+            <textarea
+              type="textarea"
+              rows='5'
+              name="subject"
+              placeholder="Subject"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.password}
+              value={values.subject}
             />
-            {errors.password && touched.password && errors.password}
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>
           </form>
+         
         )}
-      </Formik>
+        
+      </Formik> 
+      </div>
     </div>
   );
   

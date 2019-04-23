@@ -1,0 +1,31 @@
+.Formulario {
+    display: grid;
+    grid-auto-rows: 1fr 1fr 2fr;
+
+    &_Form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    
+        input {
+            margin: 0.5rem;
+            padding: 1rem;
+            background-color: white;
+        }
+        textarea {
+            margin: 0.5rem;
+            padding: 1rem;
+            background-color: white;
+        }
+        button {
+            margin: 0.5rem;
+            padding: 1rem;
+            background-color: white;
+        }
+        &_form{
+            
+            grid-column-start: 2;
+            display: grid;
+            
+        }
+    }
+}
